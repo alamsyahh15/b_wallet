@@ -1,16 +1,38 @@
-# b_wallet
+# UI KIT B-Wallet
 
-A new Flutter project.
+![GitHub stars](https://img.shields.io/github/stars/alamsyahh15/booking_hotel?style=social)
+![GitHub forks](https://img.shields.io/github/forks/alamsyahh15/booking_hotel?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/alamsyahh15/booking_hotel?style=social)
 
-## Getting Started
+🔥 This is a Design to Code Booking Hotel app built with Flutter framework
 
-This project is a starting point for a Flutter application.
+## 📸 Screenshot
 
-A few resources to get you started if this is your first Flutter project:
+## Modularization Structure 🔥
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+    # Root Project
+    .
+    ├── assets
+    ├── lib                    
+        ├── bar_widget                    
+        ├── custom_appbar                    
+        ├── home_screen                    
+        ├── main                    
+        ├── statistic_screen                    
+        ├── transfer_screen          
+     
+     
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Finished
+* [x] Modular the project based on the functionality
+
+## Author
+
+* **Muhamad Alamsyah**
+
+Don't forget to follow me, fork and give me a ⭐
+
+
+## License
+
+[Muhamad Alamsyah](https://github.com/alamsyahh15)
