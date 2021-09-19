@@ -8,6 +8,10 @@
 
 ## 📸 Screenshot
 
+<pre>
+<img src="screenshot/sc1.png" width="28.5%">     <img src="screenshot/sc2.png" width="30%">     <img src="screenshot/sc3.png" width="30%">
+</pre>
+
 ## Modularization Structure 🔥
 
     # Root Project
