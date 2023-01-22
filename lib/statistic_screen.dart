@@ -14,61 +14,67 @@ class _StatisticScreenState extends State<StatisticScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Container(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              children: [
-                const CustomAppbar(title: "Statistic"),
-                const CustomHeader(),
-                const CardBar(),
-                Container(
-                    margin: const EdgeInsets.symmetric(vertical: 42),
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 32, horizontal: 32),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.withOpacity(0.15),
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text(
-                                "\$20.00 / month",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                ),
-                              ),
-                              Text(
-                                "your current transaction ",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 11,
-                                  color: Colors.grey,
-                                ),
-                              ),
-                            ],
+        child: Container(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              const CustomAppbar(title: "Statistic"),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      const CustomHeader(),
+                      const CardBar(),
+                      Container(
+                          margin: const EdgeInsets.symmetric(vertical: 42),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 32, horizontal: 32),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.15),
+                            borderRadius: BorderRadius.circular(30),
                           ),
-                          SizedBox(
-                            height: 45,
-                            width: 114,
-                            child: ElevatedButton(
-                              style: ButtonStyle(
-                                  shape: MaterialStateProperty.all(
-                                      RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(100),
-                              ))),
-                              onPressed: () {},
-                              child: const Text("Setup"),
-                            ),
-                          )
-                        ])),
-              ],
-            ),
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    Text(
+                                      "\$20.00 / month",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                    Text(
+                                      "your current transaction ",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 11,
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 45,
+                                  width: 114,
+                                  child: ElevatedButton(
+                                    style: ButtonStyle(
+                                        shape: MaterialStateProperty.all(
+                                            RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(100),
+                                    ))),
+                                    onPressed: () {},
+                                    child: const Text("Setup"),
+                                  ),
+                                )
+                              ])),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
