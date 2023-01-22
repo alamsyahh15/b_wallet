@@ -304,7 +304,7 @@ class CustomHeader extends StatelessWidget {
                 ),
               ),
               Text(
-                "Fanen Studio",
+                "Ritter Code",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
