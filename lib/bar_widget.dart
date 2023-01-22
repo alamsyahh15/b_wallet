@@ -1,13 +1,13 @@
-// ignore_for_file: use_key_in_widget_constructors, sized_box_for_whitespace, prefer_const_constructors, unnecessary_string_interpolations
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 
 class BarWidget extends StatefulWidget {
   final double valueBar;
   final Color? barColor;
   const BarWidget({Key? key, required this.valueBar, this.barColor})
-      : assert(valueBar <= 1);
+      : assert(valueBar <= 1),
+        super(key: key);
 
   @override
   State<BarWidget> createState() => _BarWidgetState();
@@ -35,12 +35,12 @@ class _BarWidgetState extends State<BarWidget> {
     return InkWell(
       onTap: () {
         setState(() => initial = true);
-        Future.delayed(Duration(milliseconds: 300), () {
+        Future.delayed(const Duration(milliseconds: 300), () {
           initial = false;
           setState(() {});
         });
       },
-      child: Container(
+      child: SizedBox(
         height: heightBar,
         child: Stack(
           alignment: Alignment.center,
@@ -50,10 +50,10 @@ class _BarWidgetState extends State<BarWidget> {
               height: heightBar,
               decoration: BoxDecoration(
                 color: widget.barColor?.withOpacity(0.3) ??
-                    Color(0xFF1D8AEF).withOpacity(0.3),
+                    const Color(0xFF1D8AEF).withOpacity(0.3),
                 borderRadius: BorderRadius.circular(100),
               ),
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
             ),
             Positioned(
               bottom: 0,
@@ -62,10 +62,10 @@ class _BarWidgetState extends State<BarWidget> {
                 height: initial ? 0 : heightBar * widget.valueBar,
                 decoration: BoxDecoration(
                   color: widget.barColor?.withOpacity(widget.valueBar) ??
-                      Color(0xFF1D8AEF).withOpacity(widget.valueBar),
+                      const Color(0xFF1D8AEF).withOpacity(widget.valueBar),
                   borderRadius: BorderRadius.circular(100),
                 ),
-                duration: Duration(milliseconds: 800),
+                duration: const Duration(milliseconds: 800),
                 curve: Curves.bounceOut,
               ),
             ),
@@ -75,7 +75,7 @@ class _BarWidgetState extends State<BarWidget> {
                 angle: -math.pi / 2,
                 child: Text(
                   "${(widget.valueBar * 100).toStringAsFixed(0)}%",
-                  style: TextStyle(color: Colors.white, fontSize: 12),
+                  style: const TextStyle(color: Colors.white, fontSize: 12),
                 ),
               ),
             ),

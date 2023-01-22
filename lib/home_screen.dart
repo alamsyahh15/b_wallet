@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
-
 import 'package:b_wallet/statistic_screen.dart';
 import 'package:b_wallet/transfer_screen.dart';
 import 'package:flutter/material.dart';
@@ -14,37 +12,36 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    final widthScreen = MediaQuery.of(context).size.width;
-    final heightScreen = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.all(16),
+          margin: const EdgeInsets.all(16),
           child: Column(
             children: [
-              CustomHeader(),
+              const CustomHeader(),
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      SizedBox(height: 24),
+                      const SizedBox(height: 24),
                       InkWell(
                         onTap: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                                builder: (_) => StatisticScreen()),
+                              builder: (_) => const StatisticScreen(),
+                            ),
                           );
                         },
-                        child: CardNumber(),
+                        child: const CardNumber(),
                       ),
-                      SizedBox(height: 24),
+                      const SizedBox(height: 24),
                       InkWell(
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                            builder: (_) => TransferScreen(),
+                            builder: (_) => const TransferScreen(),
                           ));
                         },
-                        child: Content(),
+                        child: const Content(),
                       ),
                     ],
                   ),
@@ -64,9 +61,9 @@ class Content extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final widthScreen = MediaQuery.of(context).size.width;
-    final heightScreen = MediaQuery.of(context).size.height;
+
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
@@ -75,23 +72,24 @@ class Content extends StatelessWidget {
         clipBehavior: Clip.antiAliasWithSaveLayer,
         child: Container(
           width: widthScreen,
-          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
           child: Column(
             children: [
               Center(
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(206, 206, 206, 1.0).withOpacity(0.5),
+                    color: const Color.fromRGBO(206, 206, 206, 1.0)
+                        .withOpacity(0.5),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   height: 5,
                   width: 32,
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text(
                     "Last Transcation",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
@@ -108,8 +106,8 @@ class Content extends StatelessWidget {
               ),
               ListView(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                children: [
+                physics: const NeverScrollableScrollPhysics(),
+                children: const [
                   {
                     "title": "Gamming",
                     "date": "May 28, 2:20 PM",
@@ -158,7 +156,7 @@ class Content extends StatelessWidget {
                   },
                 ].map((e) {
                   return Container(
-                    margin: EdgeInsets.symmetric(vertical: 8),
+                    margin: const EdgeInsets.symmetric(vertical: 8),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       border: Border.all(color: Colors.grey.shade200),
@@ -167,20 +165,20 @@ class Content extends StatelessWidget {
                       leading: Container(
                         height: 40,
                         width: 40,
-                        padding: EdgeInsets.all(4),
+                        padding: const EdgeInsets.all(4),
                         decoration: BoxDecoration(
-                          color: Color(0xFFBDEFFF),
+                          color: const Color(0xFFBDEFFF),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: (e['icon'] as Widget),
                       ),
                       title: Text(
                         "${e['title']}",
-                        style: TextStyle(fontSize: 14),
+                        style: const TextStyle(fontSize: 14),
                       ),
                       subtitle: Text(
                         "${e['date']}",
-                        style: TextStyle(fontSize: 10),
+                        style: const TextStyle(fontSize: 10),
                       ),
                       trailing: Text(
                         "${e['cost']}",
@@ -213,10 +211,10 @@ class CardNumber extends StatelessWidget {
         Positioned(
           top: 32,
           right: 32,
-          child: Container(
+          child: SizedBox(
             width: 32,
             child: Stack(
-              children: [
+              children: const [
                 Positioned(
                   left: 12,
                   child: CircleAvatar(
@@ -238,7 +236,7 @@ class CardNumber extends StatelessWidget {
           left: 32,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: const [
               Text(
                 "Current Balance",
                 style: TextStyle(
@@ -258,7 +256,7 @@ class CardNumber extends StatelessWidget {
             ],
           ),
         ),
-        Positioned(
+        const Positioned(
           bottom: 32,
           left: 32,
           child: Text(
@@ -269,7 +267,7 @@ class CardNumber extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(
+        const Positioned(
           bottom: 32,
           right: 32,
           child: Text(
@@ -291,13 +289,13 @@ class CustomHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 16),
+      margin: const EdgeInsets.symmetric(vertical: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: const [
               Text(
                 "Morning!",
                 style: TextStyle(

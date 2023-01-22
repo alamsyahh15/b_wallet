@@ -1,12 +1,6 @@
-// ignore_for_file: prefer_const_constructors,  prefer_const_literals_to_create_immutables, sized_box_for_whitespace, use_full_hex_values_for_flutter_colors, use_key_in_widget_constructors
-
 import 'package:b_wallet/bar_widget.dart';
 import 'package:b_wallet/custom_appbar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 
 class StatisticScreen extends StatefulWidget {
   const StatisticScreen({Key? key}) : super(key: key);
@@ -22,15 +16,16 @@ class _StatisticScreenState extends State<StatisticScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             child: Column(
               children: [
-                CustomAppbar(title: "Statistic"),
-                CustomHeader(),
-                CardBar(),
+                const CustomAppbar(title: "Statistic"),
+                const CustomHeader(),
+                const CardBar(),
                 Container(
-                    margin: EdgeInsets.symmetric(vertical: 42),
-                    padding: EdgeInsets.symmetric(vertical: 32, horizontal: 32),
+                    margin: const EdgeInsets.symmetric(vertical: 42),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 32, horizontal: 32),
                     decoration: BoxDecoration(
                       color: Colors.grey.withOpacity(0.15),
                       borderRadius: BorderRadius.circular(30),
@@ -40,7 +35,7 @@ class _StatisticScreenState extends State<StatisticScreen> {
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
+                            children: const [
                               Text(
                                 "\$20.00 / month",
                                 style: TextStyle(
@@ -58,7 +53,7 @@ class _StatisticScreenState extends State<StatisticScreen> {
                               ),
                             ],
                           ),
-                          Container(
+                          SizedBox(
                             height: 45,
                             width: 114,
                             child: ElevatedButton(
@@ -68,7 +63,7 @@ class _StatisticScreenState extends State<StatisticScreen> {
                                 borderRadius: BorderRadius.circular(100),
                               ))),
                               onPressed: () {},
-                              child: Text("Setup"),
+                              child: const Text("Setup"),
                             ),
                           )
                         ])),
@@ -108,16 +103,16 @@ class CardBar extends StatelessWidget {
                         borderRadius: BorderRadius.circular(15),
                       ),
                       alignment: Alignment.center,
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_circle_down_rounded,
                         size: 24,
                         color: Colors.blue,
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text(
                           "\$32,232",
                           style: TextStyle(
@@ -153,10 +148,10 @@ class CardBar extends StatelessWidget {
                         color: Colors.blue.withOpacity(0.5),
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text(
                           "\$32,232",
                           style: TextStyle(
@@ -178,8 +173,8 @@ class CardBar extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16),
-            StatisticBar(),
+            const SizedBox(height: 16),
+            const StatisticBar(),
           ],
         ),
       ),
@@ -229,7 +224,7 @@ class StatisticBar extends StatelessWidget {
           return Column(
             children: [
               BarWidget(valueBar: (e['value'] as double)),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
                 "${e['day']}",
                 style: TextStyle(
@@ -253,7 +248,7 @@ class CustomHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+      margin: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
       child: Column(
         children: [
           Row(
@@ -261,7 +256,7 @@ class CustomHeader extends StatelessWidget {
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   Text(
                     "Total Balance",
                     style: TextStyle(
@@ -283,9 +278,10 @@ class CustomHeader extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                   child: Row(
-                    children: [
+                    children: const [
                       Text("Weekly"),
                       SizedBox(width: 4),
                       Icon(Icons.keyboard_arrow_down_rounded),
